@@ -1,0 +1,38 @@
+{
+  "name": "scrape-app-next",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack web scraper with Next.js 16 + NestJS",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:next\" \"npm run dev:nest\"",
+    "dev:next": "next dev --turbopack",
+    "dev:nest": "cd backend && npm run start:dev",
+    "build": "next build",
+    "build:nest": "cd backend && npm run build",
+    "build:all": "npm run build && npm run build:nest",
+    "start": "next start",
+    "start:nest": "cd backend && npm run start:prod",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5.7.3"
+  }
+}
